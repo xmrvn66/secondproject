@@ -209,7 +209,7 @@ h2 {
     content: "";
     width: 80px;
     height: 80px;
-    background-color: #fff;
+    background-color: #F6F6F6;
     position: absolute;
     top: -80px;
     left: 0;
@@ -318,5 +318,55 @@ nav ul li a:hover {
     }
     nav ul {
         width: 40 %
+    }
+    .cta {
+        width: 50%;
+        max-width: 200px;
+    }
+}
+
+@media only screen and (min-width: 875px) {
+    .subhead {
+        margin-bottom: 15%;
+    }
+    .middle-container ul {
+        margin: 0 0 4% 0;
+    }
+    .team-container ul {
+        margin: 4% 0 0 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .show-desktop {
+        display: block;
+        margin: 0 auto 13% auto;
+    }
+    .hide-desktop {
+        display: none;
+    }
+    nav ul {
+        position: inherit;
+        width: auto;
+        background: none;
+        height: auto;
+        display: flex;
+        padding-top: 0;
+    }
+    nav ul li {
+        float: left;
+    }
+    nav ul li a {
+        color: black;
+        background-color: inherit;
+        text-align: right;
+        padding: 1em 2em;
+    }
+    nav ul li a:hover {
+        background-color: inherit;
     }
 }

@@ -118,6 +118,28 @@
         </div>
     </footer>
 
+    <script>
+        // variable of menu equals the ID of menu [vorher wurde menu eine ID gegeben, s.o.] //
+        // This is to gain access to them - to use them later //
+        var menu = document.getElementById('menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        // We add an Evenlistener, who looks for a "Click" to the menu we just defined and add a function. 
+        menu.addEventListener('click', function(e) {
+            //wenn geklickt wird, dann wird die hide-mobile Klasse vom nav element überschrieben und dadurch fährt nav aus
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+
+        exit.addEventListener('click', function(e) {
+            //wenn geklickt wird, dann wird die hide-mobile Klasse an das nav element attached und nav verschwindet
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        });
+    </script>
+
+
 </body>
 
 </html>
