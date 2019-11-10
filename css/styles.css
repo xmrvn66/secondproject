@@ -2,6 +2,10 @@
 
 /* Used to Import Fonts from fonts.google.com */
 
+html {
+    background: #F6F6F6;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -25,6 +29,294 @@ ul {
 }
 
 .logo {
-    /* position absolute steht da nur als Platzhalter*/
+    width: 130px;
+}
+
+header {
+    display: flex;
+    /* This creates flex box layout - way to create 2 columns, to place objects side by side*/
+    justify-content: space-between;
+}
+
+.hide-mobile {
+    display: none;
+}
+
+.menu {
+    width: 25px;
+    margin-top: 115%;
+}
+
+.server {
+    /* Background von Server eventuell isoliert skalieren bis zu einer max größe / breite sodass das Bild nicht die gesamte Seite einnimmt bei Desktopgröße*/
+    width: 100%;
+    margin: 2em 0 2em 0;
+}
+
+h1,
+.subhead {
+    /* So sind beide Teil des gleichen Ruleset*/
+    position: relative;
+    z-index: 3;
+}
+
+.subhead {
+    font-size: 1.1em;
+}
+
+.middle-container {
+    width: 100%;
+    background: #02ACE8;
+    color: white;
+    padding: 4em 0 2em;
+    /* Skew Box for nice effect */
+    border-top-left-radius: 40px;
+    transform: skewY(-2deg);
+}
+
+
+/* Before and After middle container CSS is used to create edge effect on topright side of blue box*/
+
+
+/* (P)  Doppelpunkt und :Before :After erklären lassen*/
+
+.middle-container:before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: #02ACE8;
     position: absolute;
+    top: -39px;
+    right: 0;
+    z-index: -2;
+}
+
+.middle-container:after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    background: #F6F6F6;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+/* Any of the ul tags inside of the parent middle-container*/
+
+.middle-container ul {
+    transform: skewY(2deg);
+}
+
+.middle-container img {
+    width: 35%;
+}
+
+
+/* Wenn ich nur das dritte Icon alleine ansprechen möchte und dessen width unabhängig von den anderen Icons ändern will */
+
+
+/* Dann kann das ":nth-child()" des elements angesprochen werden -> Icon 3 soll angesprochen werden, also :nth-child(3)*/
+
+.middle-container ul li {
+    margin-bottom: 3em;
+}
+
+.middle-container ul li p {
+    padding: 3em;
+}
+
+.team-container {
+    padding: 4em 0 2em;
+    background: rgba(194, 194, 194, 0.733);
+    padding: 4em 0 2em;
+    margin-top: -3%;
+}
+
+
+/* Select first child that appears in list item*/
+
+.team-container ul li:first-child {
+    margin-bottom: 2em;
+}
+
+.team-container img {
+    width: 40%;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #F6F6F6;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    font-weight: bold;
+    color: #02ACE8;
+}
+
+h2 {
+    margin-top: 5%;
+}
+
+
+/* Get Started Button -> Action Class*/
+
+.cta {
+    background: #00CC80;
+    width: calc(100% - 1 em);
+    display: block;
+    color: #fff;
+    border-radius: 20px;
+    padding: .5em;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 3% auto 7%;
+    position: relative;
+    z-index: 4;
+}
+
+.footer-container {
+    width: 100%;
+    background: #3D444A;
+    color: #fff;
+    padding: 3em 0;
+    border-top-right-radius: 40px;
+    transform: skewY(2deg);
+}
+
+.footer-container .container {
+    transform: skewY(-2deg);
+}
+
+.footer-container:before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #3D444A;
+    position: absolute;
+    top: -39px;
+    left: 0;
+    z-index: -2;
+}
+
+.footer-container:after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.footer-links {
+    margin: 0 auto;
+}
+
+.footer-links li {
+    display: inline-block;
+}
+
+.footer-links a {
+    color: #9D9D9D;
+    font-size: .8em;
+}
+
+.footer-container p {
+    color: #9D9D9D;
+    font-size: .8em;
+}
+
+nav ul {
+    position: fixed;
+    width: 60%;
+    top: 0;
+    right: 0;
+    text-align: left;
+    background: rgb(36, 41, 44);
+    height: 100%;
+    z-index: 7;
+    padding-top: 3em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 1em 2em;
+    background-color: rgb( 52, 55, 59);
+}
+
+nav ul li a:hover {
+    background-color: rgb(90, 94, 99);
+}
+
+.exit-btn {
+    margin-bottom: 1em;
+    margin-top: -1.3em;
+    text-align: right;
+    padding: 0 1.4em;
+}
+
+.exit-btn img {
+    width: 25px;
+    cursor: pointer;
+}
+
+
+/* If Screensize is >650px then apply any of the following rulesets*/
+
+@media only screen and (min-width: 650px) {
+    .server {
+        width: 100%;
+        max-height: 350px;
+    }
+    h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+    .subhead {
+        font-size: 2em;
+        margin-bottom: 12%;
+    }
+    .middle-container {
+        margin: 0;
+    }
+    .middle-container img {
+        width: 50%;
+        max-width: 140px;
+    }
+    /* display elemente als block nebeneinander wenn screen größer*/
+    .middle-container ul {
+        display: flex;
+        margin-top: -1em;
+    }
+    .middle-container ul li {
+        margin: 0;
+    }
+    .middle-container ul li p {
+        padding: 0 .8em;
+    }
+    .team-container ul {
+        display: flex;
+        margin-top: 1em;
+    }
+    .team-container img {
+        max-width: 160px;
+    }
+    .team-container ul li {
+        padding: 0 .8em;
+    }
+    nav ul {
+        width: 40 %
+    }
 }
