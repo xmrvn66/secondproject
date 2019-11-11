@@ -4,6 +4,7 @@
 
 html {
     background: #F6F6F6;
+    margin: 12px 0;
 }
 
 body {
@@ -53,11 +54,19 @@ header {
     margin: 2em 0 2em 0;
 }
 
+.background {
+    width: 100%;
+    background-color: #020230;
+    margin: 2em 0;
+    border-radius: 10px;
+}
+
 h1,
 .subhead {
     /* So sind beide Teil des gleichen Ruleset*/
     position: relative;
     z-index: 3;
+    padding: .2em 0;
 }
 
 .subhead {
@@ -363,10 +372,11 @@ nav ul li a:hover {
     nav ul li a {
         color: black;
         background-color: inherit;
-        text-align: right;
+        text-align: center;
         padding: 1em 2em;
     }
     nav ul li a:hover {
         background-color: inherit;
+        color: #4e4e68;
     }
 }
